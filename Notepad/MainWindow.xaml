@@ -1,0 +1,135 @@
+﻿<ribbon:RibbonWindow x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+        Title="MainWindow" 
+        x:Name="RibbonWindow" FlowDirection="RightToLeft" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="480" d:DesignWidth="642" SizeToContent="WidthAndHeight" AllowDrop="True" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="303" />
+            <RowDefinition Height="0*" />
+        </Grid.RowDefinitions>
+
+        <ribbon:Ribbon x:Name="Ribbon">
+            <ribbon:Ribbon.ApplicationMenu>
+                <ribbon:RibbonApplicationMenu SmallImageSource="Images\SmallIcon.png">
+                    <ribbon:RibbonApplicationMenuItem Header="مستند جديد"
+                                                      x:Name="MenuItem1"
+                                                      ImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonApplicationMenuItem Header="فتح ملف"
+                                                      x:Name="MenuItem2"
+                                                      ImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonApplicationMenuItem Header="حفظ"
+                                                      x:Name="MenuItem3"
+                                                      ImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonApplicationMenuItem Header="حفظ كملف جديد"
+                                                      x:Name="MenuItem4"
+                                                      ImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonApplicationMenuItem Header="معاينة قبل الطباعة"
+                                                      x:Name="MenuItem5"
+                                                      ImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonApplicationMenuItem Header="طباعة"
+                                                      x:Name="MenuItem6"
+                                                      ImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonApplicationMenuItem Header="حول"
+                                                      x:Name="MenuItem7"
+                                                      ImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonApplicationMenuItem Header="خروج"
+                                                      x:Name="MenuItem8"
+                                                      ImageSource="Images\LargeIcon.png"/>
+                </ribbon:RibbonApplicationMenu>
+            </ribbon:Ribbon.ApplicationMenu>
+            <ribbon:RibbonTab x:Name="HomeTab"
+                              Header="البداية">
+                <ribbon:RibbonGroup x:Name="Group1"
+                                    Header="خيارات">
+                    <ribbon:RibbonButton x:Name="Button1"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="تراجع" />
+                    <ribbon:RibbonButton x:Name="Button2"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="أعد" />
+                    <ribbon:RibbonButton x:Name="Button3"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="امسح النص" />
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup x:Name="Group2"
+                                    Header="الحافظة">
+                    <ribbon:RibbonButton x:Name="Button4"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="الصق" />
+                    <ribbon:RibbonButton x:Name="Button5"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="قص" />
+                    <ribbon:RibbonButton x:Name="Button6"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="انسخ" />
+                    <ribbon:RibbonButton x:Name="Button20"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="تحديد الكل" />
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup x:Name="Group3"
+                                    Header="بحث">
+                    <ribbon:RibbonButton x:Name="Button8"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="ابحث" />
+                    <ribbon:RibbonButton x:Name="Button9"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="ابحث عن التالي" />
+                    <ribbon:RibbonButton x:Name="Button10"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="ابحث واستبدل" />
+                    <ribbon:RibbonButton x:Name="Button19"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="استبدل الكل" />
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup x:Name="Group4"
+                                    Header="ادراج">
+                    <ribbon:RibbonButton x:Name="Button11"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="التاريخ و الوقت" />
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+            <ribbon:RibbonTab x:Name="VeiwTab"
+                              Header="عرض">
+                <ribbon:RibbonGroup x:Name="Group6"
+                                    Header="تنسيق">
+                    <ribbon:RibbonButton x:Name="Button12"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="تحديد الخط" />
+                    <ribbon:RibbonCheckBox x:Name="RibbonCheckBox2"
+                                         Label="عريض" />
+                    <ribbon:RibbonCheckBox x:Name="RibbonCheckBox3"
+                                         Label="مائل" />
+                    <ribbon:RibbonCheckBox x:Name="RibbonCheckBox4"
+                                         Label="مسطر" />
+                    <ribbon:RibbonRadioButton x:Name="RibbonRadioButton1"
+                                         Label="محاذاة لليمين" />
+                    <ribbon:RibbonRadioButton x:Name="RibbonRadioButton2"
+                                         Label="محاذاة للوسط" />
+                    <ribbon:RibbonRadioButton x:Name="RibbonRadioButton3"
+                                         Label="محاذاة لليسار" />
+                    <ribbon:RibbonButton x:Name="Button16"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="لون الخط" />
+                    <ribbon:RibbonButton x:Name="Button17"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="لون الخلفية" />
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup x:Name="Group7"
+                                    Header="">
+                    <ribbon:RibbonButton x:Name="Button18"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="عودة الى السطر" />
+                    <ribbon:RibbonCheckBox x:Name="RibbonCheckBox1"
+                                         Label="التفاف النص" />
+                </ribbon:RibbonGroup>
+
+            </ribbon:RibbonTab>
+        </ribbon:Ribbon>
+        <TextBox Name="RichTextBox1" Text="" Margin="1,136,1,0" Grid.RowSpan="3" AcceptsReturn="True" AcceptsTab="True" AllowDrop="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AutoWordSelection="True" TextAlignment="Left" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" Height="276" VerticalAlignment="Top" />
+        <StatusBar Margin="0,280,2,0" Name="StatusBar1" Grid.Row="2" AllowDrop="False" FontWeight="Normal" FontStyle="Italic" Height="23" VerticalAlignment="Top" />
+    </Grid>
+</ribbon:RibbonWindow>

@@ -46,21 +46,26 @@ Public Class MainWindow
             Dim Reponse As String = MsgBox("هل تريد حفظ التغيرات على المستند", MsgBoxStyle.YesNoCancel, "تأكيد")
         If Reponse = 6 Then
                 If text = String.Empty Then
-                    If sfd.ShowDialog = True Then
+                    If sfd.ShowDialog = Windows.Forms.DialogResult.OK Then
                         text = sfd.FileName
                         Enregistrer()
                         Me.RichTextBox1.Clear()
-                    Else
+                        text = String.Empty
                     End If
+                Else
+                    Enregistrer()
+                    Me.RichTextBox1.Clear()
+                    text = String.Empty
                 End If
             ElseIf Reponse = 7 Then
                 Me.RichTextBox1.Clear()
+                text = String.Empty
             End If
         End If
     End Sub
 
     Private Sub MenuItem2_Click1(ByVal sender As Object, ByVal e As System.Windows.RoutedEventArgs) Handles MenuItem2.Click
-        If ofd.ShowDialog = True Then
+        If ofd.ShowDialog = Windows.Forms.DialogResult.OK Then
             text = ofd.FileName
             sr = New StreamReader(text)
             Me.RichTextBox1.Text = sr.ReadToEnd
@@ -69,7 +74,8 @@ Public Class MainWindow
     End Sub
 
     Private Sub MenuItem4_Click(ByVal sender As Object, ByVal e As System.Windows.RoutedEventArgs) Handles MenuItem4.Click
-        If sfd.ShowDialog = True Then
+        If sfd.ShowDialog = Windows.Forms.DialogResult.OK Then
+            text = sfd.FileName
             Enregistrer()
         End If
     End Sub
@@ -330,14 +336,14 @@ Public Class MainWindow
             Dim Reponse As String = MsgBox("هل تريد حفظ التغيرات على المستند", MsgBoxStyle.YesNoCancel, "تأكيد")
             If Reponse = 6 Then
                 If text = String.Empty Then
-                    If sfd.ShowDialog = True Then
+                    If sfd.ShowDialog = Windows.Forms.DialogResult.OK Then
                         text = sfd.FileName
                         Enregistrer()
                         Me.Close()
-                    Else
-                        Enregistrer()
-                        Me.Close()
                     End If
+                Else
+                    Enregistrer()
+                    Me.Close()
                 End If
             ElseIf Reponse = 7 Then
                 Me.Close()

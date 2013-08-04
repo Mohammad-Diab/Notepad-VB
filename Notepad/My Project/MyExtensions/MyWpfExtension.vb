@@ -15,7 +15,7 @@ Namespace My
         ''' Returns the application object for the running application
         ''' </summary>
         <Global.System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")>  _
-        Friend ReadOnly Property Application() As Application		
+        Friend ReadOnly Property Application() As Application
             Get
                 Return CType(Global.System.Windows.Application.Current, Application)
             End Get

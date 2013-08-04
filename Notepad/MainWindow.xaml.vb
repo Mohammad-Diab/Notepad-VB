@@ -7,6 +7,7 @@ Class MainWindow
     Dim BReader As BinaryReader
     Dim OFD As New OpenFileDialog
     Dim SFD As New SaveFileDialog
+    Dim FD As New FontDialog
     Dim SW As StreamWriter
     Dim SR As StreamReader
     Dim Path As String
@@ -65,37 +66,6 @@ Class MainWindow
         End If
     End Sub
 
-    Private Sub TextBox1_Drop(sender As Object, e As Windows.DragEventArgs) Handles TextBox1.Drop, TextBox1.DragEnter, TextBox1.DragLeave
-        Dim Encode As Encoding
-        Select Case ComboBox1.SelectedIndex
-            Case 0
-                Encode = Encoding.ASCII
-            Case 1
-                Encode = Encoding.BigEndianUnicode
-            Case 2
-                Encode = Encoding.Unicode
-            Case 3
-                Encode = Encoding.UTF32
-            Case 4
-                Encode = Encoding.UTF7
-            Case 5
-                Encode = Encoding.UTF8
-            Case Else
-                Encode = Encoding.ASCII
-        End Select
-        Path = SFD.FileName
-        SW = New StreamWriter(Path, False, Encode)
-        SW.Write(TextBox1.Text)
-        SW.Close()
-    End Sub
-
-    Private Sub Grid_Drop_1(sender As Object, e As Windows.DragEventArgs)
-        Path = SFD.FileName
-        SW = New StreamWriter(Path)
-        SW.Write(TextBox1.Text)
-        SW.Close()
-    End Sub
-
     Private Sub ComboBox1_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles ComboBox1.SelectionChanged
         If (Not Path = "") Then
             Dim Encode As Encoding
@@ -131,6 +101,19 @@ Class MainWindow
     End Sub
 
     Private Sub Font_Click_Click(sender As Object, e As RoutedEventArgs) Handles Font_Click.Click
-
+        If FD.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            TextBox1.FontFamily = New FontFamily(FD.Font.Name)
+            TextBox1.FontSize = FD.Font.Size
+            If FD.Font.Bold Then
+                TextBox1.FontWeight = FontWeights.Bold
+            Else
+                TextBox1.FontWeight = FontWeights.Normal
+            End If
+            If FD.Font.Italic Then
+                TextBox1.FontStyle = FontStyles.Italic
+            Else
+                TextBox1.FontStyle = FontStyles.Normal
+            End If
+        End If
     End Sub
 End Class

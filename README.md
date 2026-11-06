@@ -43,3 +43,7 @@ MSBuild Notpad1.sln /p:Configuration=Release /p:Platform=x86 /p:TargetFrameworkR
 ## Author
 
 Mohammad Diab
+
+## License
+
+Apache License 2.0, see [LICENSE](LICENSE).
